@@ -1,0 +1,13 @@
+.center{
+    margin: auto;
+    margin-top:5%;
+    width: 60%;
+    padding: 30px;
+    background-color: lightgray;
+}
+.profile{
+    margin: auto;
+    margin-left: 25%;
+    width: 60%;
+    padding: 30px;
+}

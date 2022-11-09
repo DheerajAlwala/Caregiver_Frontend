@@ -1,0 +1,23 @@
+.body{
+  
+    /* margin: auto;
+    padding : 20px; */
+    width : 50%;
+    margin-left: 30%;
+
+}
+.reg{
+  margin: auto;
+  margin-top : 10px;;
+  margin-left: 475px;
+  width: 60%;
+  padding: 10px;
+}
+.error-msg{
+  color : red;
+  font-size: 13px;
+}
+
+.reg_btn{
+  text-align: center;
+}

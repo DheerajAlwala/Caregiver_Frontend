@@ -1,0 +1,40 @@
+input {
+  width: 600px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  width: 1000px;
+  text-align: center;
+  font-size: 20px;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}
+
+.center {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  width: 68vw;
+
+}
+
+.error-msg {
+  color: red;
+  font-size: 13px;
+}

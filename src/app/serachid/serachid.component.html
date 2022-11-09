@@ -1,0 +1,23 @@
+<div class="d-flex" role="search" class="center">
+  <label for="Search">Email ID : </label>
+  <input class="form-control me-2" type="search" [(ngModel)]="id" placeholder="Search" aria-label="Search" required>
+  <button class="btn btn-primary" type="submit" (click)="search()" [disabled]="!(id.length>0)">Search</button>
+</div>
+<hr>
+<table *ngIf="table">
+
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Address</th>
+  </tr>
+  <tr>
+    <td>{{fname}}</td>
+    <td>{{lname}}</td>
+    <td>{{email}}</td>
+    <td>{{address}}</td>
+  </tr>
+
+</table>
+<h2 class="center" *ngIf="!table">Ooops!!!.The user you are trying to search doesn't exist!!!!</h2>

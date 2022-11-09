@@ -1,0 +1,71 @@
+<div *ngIf="!flag"><h2 class="assign">Assign your caregiver</h2>>
+<table >
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let user of list" >
+        <td *ngIf="temail!=user.email">{{user.fname}}</td>
+        <td *ngIf="temail!=user.email">{{user.lname}}</td>
+        <td *ngIf="temail!=user.email">{{user.email}}</td>
+        <td *ngIf="temail!=user.email">{{user.address}}</td>
+        <td *ngIf="temail!=user.email"><button (click)="add(user)" class="btn btn-primary">Assign Caregiver</button></td>
+    </tr>    
+</table>
+</div>
+<div *ngIf="flag" class="center">
+<h4>Your caregiver has been already assigned.</h4>
+<table>
+  <tr>
+    <th>Associate</th>
+    <th>Caregiver</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>{{tname}}</td>
+    <td>{{cgname}}</td>
+    <td><button (click)="change()" class="btn btn-primary">Change CareGiver</button></td>
+  </tr>    
+</table>
+<!-- <h4>CareGiver Details</h4>
+<div class="col-lg-8">
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Full Name</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">{{cgname}}</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Email</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">{{cgemail}}</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Address</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">{{cgaddress}}</p>
+          </div>
+        </div>
+      </div>  
+    </div> -->
+    
+    
+</div>
+
+   
+
+

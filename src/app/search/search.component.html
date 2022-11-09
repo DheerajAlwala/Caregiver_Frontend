@@ -1,0 +1,21 @@
+
+<h2 class="center">Details of all caregivers</h2>
+<table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Availability Status</th>
+    </tr>
+    <tr *ngFor="let user of list" >
+ 
+        <td *ngIf="email!=user.email">{{user.fname}}</td>
+        <td *ngIf="email!=user.email">{{user.lname}}</td>
+        <td *ngIf="email!=user.email">{{user.email}}</td>
+        <td *ngIf="email!=user.email">{{user.address}}</td>
+        <td *ngIf="email!=user.email">{{user.caregiver}}</td>
+    
+    </tr>
+    
+  </table>
