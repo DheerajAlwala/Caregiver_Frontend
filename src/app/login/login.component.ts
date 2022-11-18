@@ -27,20 +27,14 @@ export class LoginComponent implements OnInit {
  
   Login(form : NgForm) 
   {
-    
     this.userservice.login(new AuthRequest(form.value.email,form.value.pass)).subscribe(
       (res : any)=>{
-        
-        console.log("Login",res)
+        console.log("Login",res.token)
         if(res!=''){
-
             alert("Successful Login")
-            this.cookieservice.set('token',res)
+            this.cookieservice.set('token',res.token)
             Emitter.check.emit(true)
-            
-              this.router.navigate(['/']);
-            
-            
+              this.router.navigate(['/']); 
           }
           else{
             

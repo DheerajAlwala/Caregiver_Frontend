@@ -16,12 +16,12 @@ export class UserserviceService {
 
   }
 
-  baseURL="http://localhost:8080/user/h2";
+  baseURL="http://localhost:8080/users";
   token = 'Bearer '+this.cookie.get('token')
   
   
   addUser(user : User){
-      return this.service.post("http://localhost:8080/user/h2/add",user);
+      return this.service.post(this.baseURL+"/addUser",user);
   }
 
   async existId(email:string){
@@ -37,26 +37,18 @@ export class UserserviceService {
   fetch(email : string){
     const headers=new HttpHeaders().set('Authorization',this.token).set('Content-Type' , 'application/json; charset=utf-8');
     const params=new HttpParams().set('email',email);
-    return this.service.get(this.baseURL+'/fetchId',{headers,params});
+    return this.service.get(this.baseURL+'/findById',{headers,params});
   }
  
   login(auth : AuthRequest) 
   {
-    //const params=new HttpParams().set('email',email).set('pass',pass);
-    //this.service.get<string>(this.baseURL+'/login',{params})
-    return this.service.post(this.baseURL+'/login',auth,{responseType:'text'});
-   
+    return this.service.post(this.baseURL+'/login',auth);
   }
 
   fetchEmail(token : string) 
   {
     const headers=new HttpHeaders().set('Authorization',this.token).set('Content-Type' , 'application/json; charset=utf-8');
-
-    const params=new HttpParams().set('token',token);
-   
-    //this.service.get<string>(this.baseURL+'/login',{params})
-    
-    return this.service.get<string>(this.baseURL+'/fetchEmail',{headers,params,responseType : 'text' as 'json'});
-   
+    const params=new HttpParams().set('token',token); 
+    return this.service.get<string>(this.baseURL+'/fetchEmail',{headers,params,responseType: 'text' as 'json'});
   }
 }

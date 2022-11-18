@@ -10,7 +10,7 @@ import { AllCareGivers } from './AllCareGivers';
 export class AllCareGiversService {
 
   constructor(private http:HttpClient,private cookie : CookieService) { }
-  baseURL="http://localhost:8080/user/h2";
+  baseURL="http://localhost:8080/users";
   token = 'Bearer '+this.cookie.get('token')
   async fetchall(){
     const headers=new HttpHeaders().set('Authorization',this.token).set('Content-Type' , 'application/json; charset=utf-8');
@@ -18,7 +18,7 @@ export class AllCareGiversService {
   }
 
   addUser(allcaregivers : AllCareGivers){
-    return this.http.post('http://localhost:8080/user/h2/addallcg',allcaregivers);
+    return this.http.post(this.baseURL+'/addallcg',allcaregivers);
   }
 
   fetchStatus(email : string){

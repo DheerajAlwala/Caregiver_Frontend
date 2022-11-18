@@ -1,8 +1,8 @@
 export class AuthRequest{
-    email : string = ''
-    pass : string = ''
-    constructor(email : string, pass : string){
-        this.email = email;
-        this.pass = pass;
+    username : string = ''
+    password : string = ''
+    constructor(username : string, password : string){
+        this.username = username;
+        this.password = password;
     }
 }
